@@ -65,9 +65,10 @@ public class LoanCalc {
 			{
 				g = g + incrament;
 				newloan = loan;
+				iterationCounter++;
 			}
 		}
-		iterationCounter++;
+		
 		}
     	return g;
     }
@@ -81,8 +82,8 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon)
 	{  
-		double min = loan / n;
-		double max = (loan * (1 + ((rate * n) / 100))) / n;
+		double min = 0;
+		double max = loan;
 		double newloan = loan;
 		double g = 0;
 		boolean is = false;
@@ -109,8 +110,8 @@ public class LoanCalc {
 			{
 				min = g;
 			}
+			iterationCounter++;
 		}
-		iterationCounter++;
 		}
     	return g;
 	}
