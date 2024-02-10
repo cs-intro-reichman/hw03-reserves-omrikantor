@@ -83,9 +83,9 @@ public class LoanCalc {
     public static double bisectionSolver(double loan, double rate, int n, double epsilon)
 	{  
 		double min = loan / n;
-		double max = loan;
+		double max = loan + 1;
 		double g = (min + max) / 2;
-		iterationCounter = 0;
+		iterationCounter = 1;
 		while ((max - g) > epsilon)
 		{
     	if (endBalance(loan, rate, n, g) >= 0)
